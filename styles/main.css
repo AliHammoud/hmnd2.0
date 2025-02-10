@@ -2,6 +2,10 @@
   font-family: "Arial Narrow"
 }
 
+body {
+  background-color: white;
+}
+
 .full-page-container {
   display: flex;
   flex-direction: column;
