@@ -8,7 +8,14 @@ let mainCanvas;
 function setup() {
   // Set simulation framerate to 10 to avoid flickering
   frameRate(10);
-  mainCanvas = createCanvas((window.screen.width * 0.57), (window.screen.height * 0.57));
+  var query = "(-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+  if (matchMedia(query).matches) {
+    mainCanvas = createCanvas((window.screen.width * 0.57) / 2, (window.screen.height * 0.57) / 2);
+  } else {
+    mainCanvas = createCanvas((window.screen.width * 0.57), (window.screen.height * 0.57));
+  }
+  
   mainCanvas.parent("p5canvas");
   document.querySelector('.p5Canvas').addEventListener('click', spawnGlider)
 
@@ -74,7 +81,7 @@ function randomizeBoard() {
     for (let row = 0; row < rowCount; row++) {
       // Randomly select value of either 0 (dead) or 1 (alive)
       //currentCells[column][row] = random([0, 1]);
-      currentCells[column][row] = round(noise(row, column)*1)
+      currentCells[column][row] = round(noise(row, column) * 1)
     }
   }
 }
