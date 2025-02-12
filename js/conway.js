@@ -17,7 +17,11 @@ function setup() {
   }
   
   mainCanvas.parent("p5canvas");
-  document.querySelector('.p5Canvas').addEventListener('click', spawnGlider)
+  document.querySelector('.p5Canvas').addEventListener('click', spawnGlider);
+
+  if (width>2560){
+    cellSize = 20;
+  }
 
   // Calculate columns and rows
   columnCount = floor(width / cellSize);
