@@ -19,7 +19,7 @@ function setup() {
   mainCanvas.parent("p5canvas");
   document.querySelector('.p5Canvas').addEventListener('click', spawnGlider);
 
-  if (width>2560){
+  if (window.screen.width>2560){
     cellSize = 20;
   }
 
