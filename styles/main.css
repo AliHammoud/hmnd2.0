@@ -106,4 +106,12 @@ body {
   #footer {
     padding: 0.75rem;
   }
+  
+  a {
+    color: black;
+  }
+
+  a:visited {
+    color: black;
+  }
 }
